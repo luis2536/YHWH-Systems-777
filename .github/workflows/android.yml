@@ -22,6 +22,8 @@ jobs:
 
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@v3
+      with:
+        gradle-version: '8.4'
 
     - name: Compilar APK
       # Ejecutamos Gradle directamente en caso de que no estÃ© el wrapper generado

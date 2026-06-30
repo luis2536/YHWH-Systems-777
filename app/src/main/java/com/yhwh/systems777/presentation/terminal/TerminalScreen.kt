@@ -109,7 +109,7 @@ fun TerminalScreen(
                 .padding(bottom = 90.dp),
             placeholder = { Text("CMD AI Prompt...", color = Color.Gray) },
             textStyle = MaterialTheme.typography.bodyMedium.copy(color = MaterialTheme.colorScheme.primary),
-            colors = TextFieldDefaults.outlinedTextFieldColors(
+            colors = OutlinedTextFieldDefaults.colors(
                 focusedBorderColor = MaterialTheme.colorScheme.primary,
                 unfocusedBorderColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.5f),
                 cursorColor = MaterialTheme.colorScheme.secondary
