@@ -88,7 +88,7 @@ dependencies {
     implementation("io.coil-kt:coil-compose:2.5.0")
     
     // Gemini AI y UI Avanzada (Version 2.0-PRO)
-    implementation("com.google.ai.client.generativeai:generativeai:0.9.0")
+    implementation("com.google.ai.client.generativeai:generativeai:0.7.0")
     implementation("androidx.compose.material:material-icons-extended")
     implementation("androidx.compose.animation:animation")
 }
