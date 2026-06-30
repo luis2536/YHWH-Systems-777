@@ -77,7 +77,7 @@ fun DashboardScreen(
                 items(uiState.nodes) { node ->
                     NodeCard(
                         node = node,
-                        onToggle = { viewModel.toggleNodeStatus(it) }
+                        onToggle = { viewModel.onToggleNode(it) }
                     )
                 }
             }

@@ -19,9 +19,9 @@ import com.yhwh.systems777.data.local.entity.NodeEntity
 @Composable
 fun NodeCard(
     node: NodeEntity,
-    onToggle: (String) -> Unit
+    onToggle: (NodeEntity) -> Unit
 ) {
-    val isOnline = node.status == "ONLINE"
+    val isOnline = node.status.lowercase() == "activo" || node.status == "ONLINE"
     
     // Animación de pulso para el LED
     val infiniteTransition = rememberInfiniteTransition(label = "ledPulse")
@@ -66,13 +66,13 @@ fun NodeCard(
                 
                 Column {
                     Text(
-                        text = node.name,
+                        text = node.nodeName,
                         color = Color.White,
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.Bold
                     )
                     Text(
-                        text = "IP: ${node.ipAddress}",
+                        text = "URL: ${node.nodeUrl} | HR: ${node.hashRate}",
                         color = Color.Gray,
                         style = MaterialTheme.typography.bodySmall
                     )
@@ -81,7 +81,7 @@ fun NodeCard(
             
             Switch(
                 checked = isOnline,
-                onCheckedChange = { onToggle(node.id) },
+                onCheckedChange = { onToggle(node) },
                 colors = SwitchDefaults.colors(
                     checkedThumbColor = MaterialTheme.colorScheme.primary,
                     checkedTrackColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.5f),
