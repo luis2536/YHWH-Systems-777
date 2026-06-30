@@ -18,16 +18,12 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-
-    - name: Setup Gradle
-      uses: gradle/actions/setup-gradle@v3
-      with:
-        gradle-version: '8.4'
-        cache-disabled: true
+        cache: gradle
 
     - name: Compilar APK
-      # Ejecutamos Gradle directamente en caso de que no esté el wrapper generado
-      run: gradle assembleDebug --stacktrace --info 
+      run: |
+        chmod +x gradlew
+        ./gradlew assembleDebug --stacktrace --info
 
     - name: Subir APK Generada
       uses: actions/upload-artifact@v4
