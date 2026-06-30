@@ -3,14 +3,14 @@ name: Build Android APK
 on:
   push:
     branches: [ "main", "master" ]
-  workflow_dispatch:
+  workflow_dispatch: # Permite ejecutar el botÃ³n manualmente desde GitHub
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout del código
+    - name: Checkout del cÃ³digo
       uses: actions/checkout@v4
 
     - name: Configurar Java JDK 17
@@ -24,6 +24,7 @@ jobs:
       uses: gradle/actions/setup-gradle@v3
 
     - name: Compilar APK
+      # Ejecutamos Gradle directamente en caso de que no estÃ© el wrapper generado
       run: gradle assembleDebug 
 
     - name: Subir APK Generada

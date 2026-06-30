@@ -1,0 +1,6 @@
+{
+  "name": "YHWH Systems 777",
+  "description": "Android Native Workspace for YHWH Systems 777",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
